@@ -4,6 +4,9 @@ const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   output: "export",
   basePath: isProd ? "/personal" : "",
+  publicRuntimeConfig: {
+    basePath: isProd ? "/personal" : "",
+  },
   trailingSlash: true,
   images: {
     unoptimized: true

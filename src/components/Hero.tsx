@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { getAssetPath } from '@/utils/assetPath';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,7 +60,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-secondary/10 rounded-3xl transform -rotate-6"></div>
               <div className="relative bg-white rounded-3xl shadow-2xl p-8 flex items-center justify-center">
                 <Image
-                  src="/images/book-placeholder.svg"
+                  src={getAssetPath("/images/book-placeholder.svg")}
                   alt="ბრენდინგის წიგნი"
                   width={400}
                   height={600}
