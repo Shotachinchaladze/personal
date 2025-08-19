@@ -8,7 +8,9 @@
       "Bash(mkdir:*)",
       "Bash(npm run build:*)",
       "WebFetch(domain:lovely-focus-533158.framer.app)",
-      "mcp__sequential-thinking__sequentialthinking"
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(npm run lint)",
+      "Bash(npm run dev:*)"
     ],
     "deny": [],
     "ask": []
