@@ -6,12 +6,14 @@
 
 @layer base {
   :root {
-    --color-primary: 199, 255, 0;
-    --color-secondary: 12, 50, 68;
-    --color-bg-light: 250, 250, 248;
-    --color-bg-section: 245, 245, 243;
-    --color-text-primary: 42, 74, 92;
-    --color-text-secondary: 107, 114, 128;
+    --color-primary: 139, 219, 0;
+    --color-secondary: 30, 30, 30;
+    --color-accent-blue: 86, 100, 219;
+    --color-accent-yellow: 237, 222, 22;
+    --color-bg-light: 244, 243, 238;
+    --color-bg-section: 235, 233, 228;
+    --color-text-primary: 46, 46, 46;
+    --color-text-secondary: 128, 128, 128;
   }
 
   html {
@@ -19,13 +21,11 @@
   }
 
   body {
-    font-family: "Inter", "BPG Arial", "DejaVu Sans", system-ui, sans-serif;
-    @apply bg-bg-light text-body-color;
+    @apply bg-bg-light text-body-color font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: "BPG Nino Mtavruli", "DejaVu Sans", system-ui, sans-serif;
-    @apply text-secondary;
+    @apply text-secondary font-display font-semibold;
   }
 
   /* Scroll Behavior */
@@ -52,27 +52,43 @@
 @layer components {
   /* Primary Button */
   .btn-primary {
-    @apply bg-primary text-secondary font-semibold px-8 py-4 rounded-full;
-    @apply transition-all duration-300 transform hover:scale-105 hover:bg-primary-dark;
-    @apply focus:outline-none focus:ring-4 focus:ring-primary/30;
+    @apply bg-primary text-secondary font-semibold px-6 py-3 rounded-4xl;
+    @apply transition-all duration-300 hover:bg-primary-dark hover:shadow-btn-hover;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/40;
   }
 
   /* Secondary Button */
   .btn-secondary {
-    @apply bg-secondary text-white font-semibold px-8 py-4 rounded-full;
-    @apply transition-all duration-300 transform hover:scale-105 hover:bg-navy-700;
-    @apply focus:outline-none focus:ring-4 focus:ring-secondary/30;
+    @apply bg-secondary text-white font-semibold px-6 py-3 rounded-4xl;
+    @apply transition-all duration-300 hover:bg-gray-800 hover:shadow-btn-hover;
+    @apply focus:outline-none focus:ring-2 focus:ring-secondary/40;
+  }
+
+  /* Accent Button */
+  .btn-accent {
+    @apply bg-accent-blue text-white font-semibold px-6 py-3 rounded-4xl;
+    @apply transition-all duration-300 hover:bg-navy-500 hover:shadow-btn-hover;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-blue/40;
   }
 
   /* Card Component */
   .card {
-    @apply bg-white rounded-2xl p-6 shadow-one;
-    @apply transition-all duration-300 hover:shadow-two hover:scale-[1.02];
+    @apply bg-white rounded-xl p-6 shadow-card;
+    @apply transition-all duration-300 hover:shadow-card-hover;
   }
 
   /* Section Container */
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container mx-auto px-6;
+  }
+
+  /* Grid Layouts */
+  .grid-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6;
+  }
+
+  .grid-2 {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
   }
 
   /* Smooth Scroll Container */
@@ -87,7 +103,12 @@
 
   /* Gradient Text */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-lime-300 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-accent-yellow bg-clip-text text-transparent;
+  }
+
+  /* Accent Gradient Text */
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-accent-blue to-navy-300 bg-clip-text text-transparent;
   }
 
   /* Responsive video embeds for Markdown-rendered YouTube links */
@@ -140,11 +161,29 @@
   .animate-on-scroll {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Hover Animations */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-grow {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .transition-fast {
+    @apply transition-all duration-200 ease-out;
   }
 }
