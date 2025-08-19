@@ -8,20 +8,14 @@ This is a personal repository containing a Next.js 15 static site application wi
 
 ## Project Structure
 
-- **react-static-app/**: Main Next.js application
-  - **src/app/**: App Router pages and layouts
-  - **src/components/**: React components
-  - **src/styles/**: Global styles
-  - **src/types/**: TypeScript type definitions
-  - **public/**: Static assets
-  - **out/**: Static export output directory
+- **src/app/**: App Router pages and layouts
+- **src/components/**: React components
+- **src/styles/**: Global styles
+- **src/types/**: TypeScript type definitions
+- **public/**: Static assets
+- **out/**: Static export output directory
 
 ## Development Commands
-
-Navigate to the `react-static-app` directory first:
-```bash
-cd react-static-app
-```
 
 ### Core Commands
 - `npm run dev` - Start development server with Turbopack at http://localhost:3000

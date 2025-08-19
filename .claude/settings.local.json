@@ -10,7 +10,8 @@
       "WebFetch(domain:lovely-focus-533158.framer.app)",
       "mcp__sequential-thinking__sequentialthinking",
       "Bash(npm run lint)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(mv:*)"
     ],
     "deny": [],
     "ask": []
