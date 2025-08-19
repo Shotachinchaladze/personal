@@ -101,14 +101,14 @@
     @apply flex-none snap-center;
   }
 
-  /* Gradient Text */
+  /* Accent Text - Solid color for emphasis */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary to-accent-yellow bg-clip-text text-transparent;
+    @apply text-primary font-semibold;
   }
 
-  /* Accent Gradient Text */
+  /* Alternative Accent Text */
   .gradient-text-blue {
-    @apply bg-gradient-to-r from-accent-blue to-navy-300 bg-clip-text text-transparent;
+    @apply text-accent-blue font-semibold;
   }
 
   /* Responsive video embeds for Markdown-rendered YouTube links */
